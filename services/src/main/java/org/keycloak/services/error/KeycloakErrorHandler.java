@@ -61,9 +61,9 @@ public class KeycloakErrorHandler implements ExceptionMapper<Throwable> {
 
         int statusCode = getStatusCode(throwable);
 
-        if (statusCode >= 500 && statusCode <= 599) {
+        //if (statusCode >= 500 && statusCode <= 599) {
             logger.error(UNCAUGHT_SERVER_ERROR_TEXT, throwable);
-        }
+        //}
 
         if (!MediaTypeMatcher.isHtmlRequest(headers)) {
             OAuth2ErrorRepresentation error = new OAuth2ErrorRepresentation();
